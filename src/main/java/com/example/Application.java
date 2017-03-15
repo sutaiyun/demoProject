@@ -1,5 +1,6 @@
 package com.example;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,7 @@ import java.util.Date;
 @RestController
 @EnableAutoConfiguration
 @SpringBootApplication
+@MapperScan(basePackages = "com.example.datasource.mapper")
 public class Application implements CommandLineRunner {
     @RequestMapping("/")
     String home() {

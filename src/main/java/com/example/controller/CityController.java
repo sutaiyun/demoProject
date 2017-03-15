@@ -27,7 +27,7 @@ public class CityController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "Error!!!!!!!!!";
+        return "Error City!!!!!!!!!";
     }
 
     private String  getCite() throws IOException {
@@ -41,7 +41,7 @@ public class CityController {
             CityMapper cityMapper = session
                     .getMapper(CityMapper.class);
             City city = cityMapper.selectByCityId(1);
-            return "city: " + city.getName();
+            return "city: " + city.toString();
         } finally {
             session.close();
         }
