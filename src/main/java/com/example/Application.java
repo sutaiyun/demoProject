@@ -19,10 +19,10 @@ import java.util.Date;
 @SpringBootApplication
 @MapperScan(basePackages = "com.example.datasource.mapper")
 public class Application implements CommandLineRunner {
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
-    }
+    //@RequestMapping("/")
+    //String home() {
+    //   return "Hello World!";
+    //}
 
     @Autowired
     private MyConfig myConfig;
