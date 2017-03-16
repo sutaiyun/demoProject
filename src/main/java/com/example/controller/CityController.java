@@ -40,8 +40,8 @@ public class CityController {
         try {
             CityMapper cityMapper = session
                     .getMapper(CityMapper.class);
-            City city = cityMapper.selectByCityId(1);
-            return "city: " + city.toString();
+            City city = cityMapper.selectByPrimaryKey(1L);
+            return "Id: " + city.getId() + " Name: " + city.getName() + " State: " + city.getState();
         } finally {
             session.close();
         }
