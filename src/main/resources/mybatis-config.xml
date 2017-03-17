@@ -39,6 +39,7 @@
     </environments>
     <mappers>
         <mapper resource="com/example/mapper/CityMapper.xml"/>
+        <mapper resource="com/example/mapper/CityMapper2.xml"/>
         <mapper resource="com/example/mapper/CountryMapper.xml"/>
         <mapper resource="com/example/mapper/UserInfoMapper.xml"/>
     </mappers>
