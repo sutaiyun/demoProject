@@ -21,11 +21,11 @@ import java.util.Map;
 
 @Configuration
 @EnableKafka
-public class KafkaConsumerConfig {
+public class KafkaConsumerConfig2 {
     @Value("${kafka.broker.address}")
     private String brokerAddress;
 
-    @Value("kafka.consumer.group-id")
+    @Value("kafka.consumer.group-id-2")
     private String groupIdConfig;
 
     @Bean
@@ -57,20 +57,9 @@ public class KafkaConsumerConfig {
         return propsMap;
     }
 
-    @Bean
-    public ListenerTestConsumerGroup1 listenerTestConsumer() {
-        return new ListenerTestConsumerGroup1();
-    }
-
-    /*
-    @Bean
-    public ListenerTestConsumerGroup1 listenerTestConsumer1() {
-        return new ListenerTestConsumerGroup1();
-    }
 
     @Bean
     public ListenerTestConsumerGroup2 listenerTestConsumer2() {
         return new ListenerTestConsumerGroup2();
     }
-    */
 }
