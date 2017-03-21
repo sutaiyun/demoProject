@@ -61,16 +61,4 @@ public class KafkaConsumerConfig {
     public ListenerTestConsumerGroup1 listenerTestConsumer() {
         return new ListenerTestConsumerGroup1();
     }
-
-    /*
-    @Bean
-    public ListenerTestConsumerGroup1 listenerTestConsumer1() {
-        return new ListenerTestConsumerGroup1();
-    }
-
-    @Bean
-    public ListenerTestConsumerGroup2 listenerTestConsumer2() {
-        return new ListenerTestConsumerGroup2();
-    }
-    */
 }
