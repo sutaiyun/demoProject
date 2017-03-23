@@ -15,3 +15,6 @@ https://git.oschina.net/gm100861/spring-boot-kafka
 而这个序列可以有 多个partion， 如果配置这组消费者的个数和partion相同， 则每个partion被分配到了一个消费者，从而实现了负荷分担。
 如果 消费者个数比partion多， 则有些消费者不能获取到数据。如果消费者比partion少， 则需要将消费者的消费者线程配置多个，从而实现
 每个partion分配到一个消费者的目的----但要避免partion过少， 消费者线程过多， 而某些消费者线程集中到一个server上的情况）
+
+#### 4 spring integration
+https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spring Integration 4.0: 一个完全无需 XML 的示例)
