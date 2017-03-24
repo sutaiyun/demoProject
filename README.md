@@ -18,3 +18,6 @@ https://git.oschina.net/gm100861/spring-boot-kafka
 
 #### 4 spring integration
 https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spring Integration 4.0: 一个完全无需 XML 的示例)
+
+#### 5 blur-admin
+增加blur-admin，作为前端界面基础。
