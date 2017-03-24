@@ -21,3 +21,22 @@ https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spri
 
 #### 5 blur-admin
 增加blur-admin，作为前端界面基础。
+   使用 git的 bash命令行执行以下命令：
+   cd webConsole/blur-admin-master
+   npm install -g bower
+   bower install
+   npm install
+   //执行失败， 需要使用 指定版本的python
+   //安装node版本2.7
+   //npm install  失败， 要求安装 微软的.net framework SDK 2.0
+   //安装.net 2.0 SDK
+   //改为在windows的CMD命令窗口执行
+   npm install  (自动会执行 bower install）
+   gulp serve    #运行blur-admin demo
+
+   //前端编译和发布
+   npm rebuild node-sass
+   gulp build   ## 编译前端生成dist发布目录
+   rm -rf ../src/main/resources/web
+   cp -rf release ../src/main/resources/web
+   //注意blur-admin已经有了.gitignore，临时文件不会提交到git库中！
