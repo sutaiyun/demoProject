@@ -40,3 +40,9 @@ https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spri
    rm -rf ../src/main/resources/web
    cp -rf release ../src/main/resources/web
    //注意blur-admin已经有了.gitignore，临时文件不会提交到git库中！
+
+#### 6    kityminder-editor
+    https://github.com/fex-team/kityminder-editor
+    npm run init
+    grunt build
+    cp -rf dist  ../src/main/resources/web
