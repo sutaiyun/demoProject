@@ -1,4 +1,5 @@
 target/
 .idea
 demo-project.iml
+src/main/resources/web
 
