@@ -45,4 +45,12 @@ https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spri
     https://github.com/fex-team/kityminder-editor
     npm run init
     grunt build
-    cp -rf dist  ../src/main/resources/web
+    //cp -rf dist  ../src/main/resources/web
+    //cp -rf bower_componets  ../src/main/resources/bower_components
+    //cp -rf server  ../src/main/resources/server
+    cp -rf bower_components  ../src/main/resources/web
+    cp -rf dist ../src/main/resorces/web
+    cp -rf less  ../src/main/resource/web
+    cp -rf server  ../src/main/resource/web
+    cp -rf ui  ../src/main/resource/web
+
