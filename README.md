@@ -48,9 +48,9 @@ https://www.oschina.net/translate/spring-integration-40-complete-xml-free  (Spri
     //cp -rf dist  ../src/main/resources/web
     //cp -rf bower_componets  ../src/main/resources/bower_components
     //cp -rf server  ../src/main/resources/server
-    cp -rf bower_components  ../src/main/resources/web
-    cp -rf dist ../src/main/resorces/web
-    cp -rf less  ../src/main/resource/web
-    cp -rf server  ../src/main/resource/web
-    cp -rf ui  ../src/main/resource/web
+    cp -rf web/kityminder-editor/bower_components  ../src/main/resources/web
+    cp -rf web/kityminder-editor/dist              ../src/main/resources/web
+    cp -rf web/kityminder-editor/less              ../src/main/resources/web
+    cp -rf web/kityminder-editor/server            ../src/main/resources/web
+    cp -rf web/kityminder-editor/ui                ../src/main/resources/web
 
