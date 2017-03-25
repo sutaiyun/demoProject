@@ -4,15 +4,20 @@
 
 #1, blur-admin
 cd ../../../blur-admin
+npm install
+gulp build
 cp -rf release ../src/main/resources/web
 
 #2, kity-minder-editor
-cd ..
+cd ../web/kityminder-editor
+npm run init
+
+cd ../..
 cp -rf web/kityminder-editor/bower_components  ../src/main/resources/web
 cp -rf web/kityminder-editor/dist              ../src/main/resources/web
 cp -rf web/kityminder-editor/less              ../src/main/resources/web
 cp -rf web/kityminder-editor/server            ../src/main/resources/web
 cp -rf web/kityminder-editor/ui                ../src/main/resources/web
 
-#3, ¿ÉÄÜºÏ²¢ web_devÏÂµÄ×ÊÔ´µ½ webÄ¿Â¼
-    £¨»òÕß web_devÏÂµÄ×ÊÔ´Ìæ»» blur-admin »òÕß kity-minder-editorÏÂµÄ×ÊÔ´£¬ ±àÒëºóÖ±½Ó¸²¸Ç webÄ¿Â¼£©
+#3, ï¿½ï¿½ï¿½ÜºÏ²ï¿½ web_devï¿½Âµï¿½ï¿½ï¿½Ô´ï¿½ï¿½ webÄ¿Â¼
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ web_devï¿½Âµï¿½ï¿½ï¿½Ô´ï¿½æ»» blur-admin ï¿½ï¿½ï¿½ï¿½ kity-minder-editorï¿½Âµï¿½ï¿½ï¿½Ô´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó¸ï¿½ï¿½ï¿½ webÄ¿Â¼ï¿½ï¿½
