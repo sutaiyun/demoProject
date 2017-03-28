@@ -1,11 +1,9 @@
 package com.example.service;
 
-import com.example.Util;
-import com.example.datasource.service.CountryService;
+import com.example.util.Util;
 import com.example.domain.DemoUser;
 import com.example.domain.LoginRequest;
 import com.example.domain.LoginResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -30,16 +28,19 @@ public class SessionServiceImpl implements SessionService {
         loginResponse.setUserName(loginRequest.getUserName());
         loginResponse.setToken(token);
 
+        DemoUser.getInstance().setToken(token);
         return loginResponse;
     }
 
     @Override
     public boolean tokenIsExist(String userName) {
-        return false;
+        return null != DemoUser.getInstance().getToken();
     }
 
     @Override
     public DemoUser getUserByToken(String token) {
-        return null;
+        //get user by token from redis;
+
+        return DemoUser.getInstance();
     }
 }

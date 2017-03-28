@@ -8,6 +8,21 @@ import java.util.List;
  */
 
 public class DemoUser {
+    private DemoUser() {
+        this.loginName = "demo-project";
+        this.password = "demo";
+        this.token = null;
+    }
+
+    private static DemoUser demoUser = null;
+
+    public static DemoUser getInstance() {
+        if (demoUser == null) {
+            demoUser = new DemoUser();
+        }
+        return demoUser;
+    }
+
     private String id;
 
     private String loginName;
@@ -17,6 +32,8 @@ public class DemoUser {
     private String password;
 
     private String number;
+
+    private String token;
 
     public String getId() {
         return id;
@@ -56,5 +73,13 @@ public class DemoUser {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
