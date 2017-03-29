@@ -34,6 +34,7 @@ public class SessionServiceImpl implements SessionService {
 
     @Override
     public boolean tokenIsExist(String userName) {
+        //get token from redis by userName
         return null != DemoUser.getInstance().getToken();
     }
 

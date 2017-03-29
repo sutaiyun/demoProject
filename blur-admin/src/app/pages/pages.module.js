@@ -8,7 +8,7 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
 
-    'BlurAdmin.pages.dashboard'
+    'BlurAdmin.pages.dashboard',
     //'BlurAdmin.pages.ui',
     //'BlurAdmin.pages.components',
     //'BlurAdmin.pages.form',
@@ -17,7 +17,21 @@
     //'BlurAdmin.pages.maps',
     //'BlurAdmin.pages.profile',
   ])
-      .config(routeConfig);
+      .config(routeConfig).run (runConfig);
+
+  function runConfig($rootScope,tokenService) {
+    $rootScope.$on("token_time_out",function () {
+      location.href= "/auth.html";
+    });
+
+    $rootScope.$on("$locationChangeSuccess",function () {
+      var token = tokenService.getToken();
+      console.log(token);
+      if (token == null){
+        $rootScope.$broadcast("token_time_out");
+      }
+    });
+  }
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {

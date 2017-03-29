@@ -25,7 +25,7 @@ public class SessionHandlerInterceptor implements HandlerInterceptor {
         String token = httpServletRequest.getHeader("DEMO-TOKEN");
         System.out.println("Url: " + httpServletRequest.getRequestURI() + " DEMO-TOKEN: " + token);
 
-        if (null == token || sessionService.tokenIsExist(token)) {
+        if (null == token || !sessionService.tokenIsExist(token)) {
             return errResponse(ErrorEnum.ERROR_TOKEN_NOT_EXIST.getCode(),
                                 ErrorEnum.ERROR_TOKEN_NOT_EXIST.getMsg(),
                                 httpServletResponse);
