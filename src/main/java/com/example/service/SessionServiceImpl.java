@@ -1,5 +1,7 @@
 package com.example.service;
 
+import com.example.util.DemoException;
+import com.example.util.ErrorEnum;
 import com.example.util.Util;
 import com.example.domain.DemoUser;
 import com.example.domain.LoginRequest;
@@ -15,16 +17,22 @@ public class SessionServiceImpl implements SessionService {
     //private UserService userService;
 
     @Override
-    public LoginResponse login(LoginRequest loginRequest) {
-        System.out.println("user: " + loginRequest.getUserName());
-        System.out.println("pwd: " + loginRequest.getPassword());
+    public LoginResponse login(LoginRequest loginRequest) throws DemoException {
+        LoginResponse loginResponse = new LoginResponse();
 
         //check user/pwd from mysql user table(from UserService)
         //check redis token
         String token = Util.getUUID();
         //store token , userName to redis and mysql
 
-        LoginResponse loginResponse = new LoginResponse();
+        if (!loginRequest.getUserName().equals(DemoUser.getInstance().getLoginName()) ||
+                !loginRequest.getPassword().equals(DemoUser.getInstance().getPassword()))
+        {
+            System.out.println("user/password error>> LoginRequest: " + loginRequest.getUserName() + " " + loginRequest.getPassword() +
+                                "    DemoUser: " + DemoUser.getInstance().getLoginName() + " " + DemoUser.getInstance().getPassword());
+            throw new DemoException(ErrorEnum.ERROR_USER_LOGIN_FAILD);
+        }
+
         loginResponse.setUserName(loginRequest.getUserName());
         loginResponse.setToken(token);
 

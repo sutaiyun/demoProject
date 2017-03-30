@@ -9,8 +9,8 @@ import java.util.List;
 
 public class DemoUser {
     private DemoUser() {
-        this.loginName = "demo-project";
-        this.password = "demo";
+        this.loginName = "demo";
+        this.password = "demopwd";
         this.token = null;
     }
 

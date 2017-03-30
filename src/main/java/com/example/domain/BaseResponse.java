@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import com.example.util.DemoException;
+
 /**
  * Created by sutaiyun on 2017/3/28.
  */
@@ -45,6 +47,10 @@ public class BaseResponse<T> {
     public static BaseResponse<Object> makeResponse(Object pl){
         BaseResponse<Object> response = getObjectBaseResponse(pl, 1, "success");
         return response;
+    }
+
+    public static BaseResponse<Object> makeErrResponse(DemoException e, Object pl){
+        return getObjectBaseResponse(pl, e.getCode(), e.getMsg());
     }
 
     private static BaseResponse<Object> getObjectBaseResponse(Object pl, Integer code, String msg) {
