@@ -1,6 +1,5 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * Created by sutaiyun on 2017/3/30.
  */
 (function () {
   'use strict';
@@ -13,7 +12,7 @@
     $stateProvider
         .state('dashboard', {
           url: '/dashboard',
-          templateUrl: 'app/pages/dashboard/dashboard.html',
+          templateUrl: 'app/pages/dashboard/dashboard-demo.html',
           title: 'Dashboard',
           sidebarMeta: {
             icon: 'ion-android-home',
