@@ -12,7 +12,13 @@
   function pageTop() {
     return {
       restrict: 'E',
-      templateUrl: 'app/theme/components/pageTop/pageTop.html'
+      templateUrl: 'app/theme/components/pageTop/pageTop.html',
+      controller:function ($scope,tokenService) {
+        $scope.logout = function () {
+          tokenService.deleteToken();
+          location.href = "/auth.html";
+        }
+      }
     };
   }
 

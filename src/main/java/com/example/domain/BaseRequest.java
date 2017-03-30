@@ -21,8 +21,8 @@ public class BaseRequest<T> {
         return requestMsg;
     }
 
-    public void setBizData(T bizData) {
-        this.requestMsg = bizData;
+    public void setRequestMsg(T requestMsg) {
+        this.requestMsg = requestMsg;
     }
 
     @Override

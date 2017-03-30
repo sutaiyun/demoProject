@@ -12,6 +12,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
 
+  <script type="application/javascript" src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
   <!-- bower:css -->
   <!-- run `gulp inject` to automatically populate bower styles dependencies -->
@@ -32,22 +34,22 @@
 
     <form class="form-horizontal">
       <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <label for="userName" class="col-sm-2 control-label">User</label>
 
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          <input type="text" class="form-control" id="userName" placeholder="用户名">
         </div>
       </div>
       <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <label for="password" class="col-sm-2 control-label">Password</label>
 
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default btn-auth">Sign in</button>
+          <button type="button" onclick="login()" class="btn btn-default btn-auth">Sign in</button>
           <a href class="forgot-pass">Forgot password?</a>
         </div>
       </div>
@@ -64,5 +66,42 @@
     </div>
   </div>
 </main>
+
+<script >
+  function login() {
+    var userName = $("#userName").val();
+    var password = $("#password").val();
+    var mData = "{\"requestMsg\":{\"userName\":\""+userName+"\",\"password\":\""+password+"\"}}";
+    var settings = {
+      "async": true,
+//      "crossDomain": true,
+      "url": "/session/login",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-cache"
+        //"token":"null"
+      },
+      "processData": false,
+      "data": mData
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+//        localStorage.setItem("DEMO-TOKEN",response.bizData.token);
+      setToken(response.responseMsg.token);
+      location.href="/index.html";
+    });
+  }
+
+  function setToken(token) {
+    var tokenName = "DEMO-TOKEN";
+    var Hours = 2;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Hours*60*60*1000);
+    document.cookie = tokenName + "="+ escape (token) + ";expires=" + exp.toGMTString();
+  }
+</script>
+
 </body>
 </html>

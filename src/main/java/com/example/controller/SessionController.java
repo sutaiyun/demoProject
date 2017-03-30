@@ -24,7 +24,11 @@ public class SessionController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public BaseResponse<Object> login(@RequestBody BaseRequest<LoginRequest> request) {
+        System.out.println("RequestBody: " + request.toString());
+
         LoginRequest loginRequest = request.getRequestMsg();
+        System.out.println("LoginRequest: " + loginRequest.toString());
+
         LoginResponse loginResponse = sessionService.login(loginRequest);
         return BaseResponse.makeResponse(loginResponse);
     }
